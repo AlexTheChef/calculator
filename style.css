@@ -1,0 +1,30 @@
+html {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    font-family: 'Spartan', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --blue: #5267DF;
+    --red: #FA5959;
+    --dark: #242A45;
+    --silver: #9194A2;
+}
