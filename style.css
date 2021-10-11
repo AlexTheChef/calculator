@@ -6,7 +6,7 @@ html {
     width: 100%;
     font-family: 'Spartan', sans-serif;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     background: var(--background-color);
@@ -16,7 +16,7 @@ body {
     box-sizing: border-box;
     font-family: 'Spartan', sans-serif;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     height: 900px;
