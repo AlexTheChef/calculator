@@ -33,7 +33,9 @@ body {
     --output-color: #181F33;
     --calculator-bg-color: #242D44;
     --del-color: #647198;
+    --del-color-hover: #A2B2E1;
     --eq-btn-color: #D03F2F;
+    --eq-btn-hover: #F96B5B;
     --shadow-color: #B3A497;
     --shadow-color-del: #414E73;
     --shadow-color-eq: #93261A;
@@ -48,8 +50,9 @@ body {
     --output-color: #EEEEEE;
     --calculator-bg-color: #D2CDCD;
     --del-color: #378187;
-    ;
+    --del-color-hover: #62B5BC;
     --eq-btn-color: #C85402;
+    --eq-btn-hover: #FF8A38;
     --shadow-color: #A79E91;
     --shadow-color-del: #1B6066;
     --shadow-color-eq: #873901;
@@ -64,8 +67,9 @@ body {
     --output-color: #1E0936;
     --calculator-bg-color: #1E0936;
     --del-color: #56077C;
+    --del-color-hover: #8631AF;
     --eq-btn-color: #00DED0;
-    ;
+    --eq-btn-hover: #93FFF8;
     --shadow-color: #881C9E;
     --shadow-color-del: #BE15F4;
     --shadow-color-eq: #6CF9F1;
@@ -148,7 +152,6 @@ body {
 }
 
 .slider span {
-    
     width: 16px;
     height: 16px;
     border-radius: 50%;
@@ -183,7 +186,7 @@ body {
 .calculator-grid>button {
     font-family: 'Spartan', sans-serif;
     width: 101px;
-    height: 64px;
+    height: 59px;
     cursor: pointer;
     font-size: 2rem;
     outline: none;
@@ -201,6 +204,7 @@ body {
     letter-spacing: -0.533333px;
     color: var(--btn-text-color);
     margin: 12px;
+    padding-bottom: 5px;
 }
 
 .calculator-grid>button:hover {
@@ -259,6 +263,10 @@ body {
     letter-spacing: -0.333333px;
 }
 
+#del:hover {
+    background: var(--del-color-hover);
+}
+
 .span-one {
     grid-column: span 2;
     width: 227px !important;
@@ -267,6 +275,68 @@ body {
     color: var(--eq-text-color) !important;
 }
 
+.span-one:hover {
+    background: var(--eq-btn-hover) !important;
+}
+
 .active-tab {
     background: var(--eq-btn-color) !important;
+}
+
+.active-tab:hover {
+    background: var(--eq-btn-hover) !important;
+}
+
+@media screen and (max-width: 800px) {
+    body {
+        height: 667px;
+        width: 375px;
+    }
+    .container {
+        width: 327px;
+        height: 608px;
+    }
+    .navbar {
+        width: 327px;
+    }
+    .nav-text {
+        bottom: 4px;
+    }
+    .calculator-grid {
+        width: 327px;
+        height: 750px;
+    }
+    .calculator-grid>button {
+        width: 60px;
+        font-size: 2rem;
+        border-radius: 10px;
+        font-size: 28px;
+        line-height: 31px;
+        letter-spacing: -0.46px;
+        margin: 6px;
+    }
+    .span-two {
+        width: 133px !important;
+    }
+    .span-one {
+        width: 133px !important;
+    }
+    .output {
+        width: 293px;
+        height: 113px;
+        padding: 15px 24px 10px 10px;
+    }
+    .output .current-operand {
+        font-size: 32px;
+        line-height: 36px;
+        letter-spacing: -0.53px;
+        text-align: center;
+    }
+    .output .previous-operand {
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0;
+        opacity: 0.75;
+        margin-top:10px;
+    }
 }
