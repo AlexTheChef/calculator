@@ -1,18 +1,23 @@
-const toggleSwitch = document.querySelector('.theme-container')
-document.documentElement.setAttribute('theme', 'dark');
+const $tabs = document.querySelectorAll('.js-tab')
 
-function switchTheme() {
-    let theme = document.documentElement.getAttribute('theme')
-    if (theme == 'light') {
-        document.documentElement.setAttribute('theme', 'dark');
-        document.querySelector(".theme").innerHTML = "LIGHT"
-
+const colorTheme = [
+    {
+        theme: 'dark'
+    },
+    {
+        theme: 'light'
+    },
+    {
+        theme: 'saturated'
     }
-    else {
-        document.documentElement.setAttribute('theme', 'light');
-        document.querySelector(".theme").innerHTML = "DARK"
-    }
+]
 
+function slide(index) {
+    $tabs.forEach($tab => $tab.classList.remove('active-tab'))
+    $tabs[index-1].classList.add('active-tab')
 }
 
-toggleSwitch.addEventListener('click', switchTheme);
+$tabs.forEach(($tab, index) => $tab.addEventListener("click", () => {
+    slide(index+1)
+    document.documentElement.setAttribute('theme', colorTheme[index].theme);
+}))

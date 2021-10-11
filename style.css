@@ -47,7 +47,8 @@ body {
     --button-color: #E5E4E1;
     --output-color: #EEEEEE;
     --calculator-bg-color: #D2CDCD;
-    --del-color: #378187;;
+    --del-color: #378187;
+    ;
     --eq-btn-color: #C85402;
     --shadow-color: #A79E91;
     --shadow-color-del: #1B6066;
@@ -63,14 +64,14 @@ body {
     --output-color: #1E0936;
     --calculator-bg-color: #1E0936;
     --del-color: #56077C;
-    --eq-btn-color: #00DED0;;
+    --eq-btn-color: #00DED0;
+    ;
     --shadow-color: #881C9E;
     --shadow-color-del: #BE15F4;
     --shadow-color-eq: #6CF9F1;
     --btn-text-color: #FFE53D;
     --eq-text-color: #1A2327;
 }
-
 
 .container {
     font-family: 'Spartan', sans-serif;
@@ -115,6 +116,43 @@ body {
 .slide-container {
     width: 71px;
     height: 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-numbers {
+    width: 71px;
+    height: 18px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 13px;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.slider {
+    width: 71px;
+    height: 26px;
+    border-radius: 13px;
+    background: var(--calculator-bg-color);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.slider span {
+    
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: transparent;
 }
 
 .nav-text {
@@ -227,4 +265,8 @@ body {
     background: var(--eq-btn-color) !important;
     box-shadow: inset 0px -4px 0px var(--shadow-color-eq) !important;
     color: var(--eq-text-color) !important;
+}
+
+.active-tab {
+    background: var(--eq-btn-color) !important;
 }
