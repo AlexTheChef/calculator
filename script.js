@@ -1,60 +1,49 @@
+import { calculate } from './evaluation.js';
+import { tokenize } from './evaluation.js';
+
+
 class Calculator {
-    constructor(previousText, currentText) {
-        this.previousText = previousText
+    constructor(currentText) {
         this.currentText = currentText
         this.clear()
     }
 
     delete() {
-
-    }
-
-    pickOperation(operation) {
-        if(this.currentOperand === '') return
-        if(this.previousOperand !== ''){
-            this.compute()
-        }
-        this.operation = operation
-        this.previousOperand = this.currentOperand
-        this.currentOperand = ''
+        text = text.toString().slice(0, -1)
     }
 
     clear() {
-        this.currentOperand = ''
-        this.operation = undefined
-        this.previousOperand = ''
-    }
-
-    addNumber(number) {
-        if(number === '.' && this.currentOperand.includes('.')) return
-        this.currentOperand = this.currentOperand.toString() + number.toString()
+        text = ''
     }
 
     compute() {
-
+        equalsButton.addEventListener('click', function () {
+            if (text == '') return
+            currentText.innerHTML = calculate(tokenize(text)).toLocaleString('en');
+        });
     }
 
     updateConsole() {
-        this.currentText.innerText = this.currentOperand
-        this.previousText.innerText = this.previousOperand
+        this.currentText.innerText = text
     }
 }
 
-const previousText = document.querySelector('[data-previous-operand]')
+let text = ''
+
 const currentText = document.querySelector('[data-current-operand]')
 const numberButtons = document.querySelectorAll('[data-number]')
-const operationButtons = document.querySelectorAll('[data-operation]')
 const equalsButton = document.querySelector('[data-equals]')
 const deleteButton = document.querySelector('[data-delete]')
 const allClearButton = document.querySelector('[data-all-clear]')
 
-const calculator = new Calculator(previousText, currentText)
+const calculator = new Calculator(currentText)
 
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
-        calculator.addNumber(button.innerText)
+        text = text.concat(button.innerHTML)
         calculator.updateConsole()
     })
+
 })
 
 allClearButton.addEventListener('click', () => {
@@ -62,34 +51,15 @@ allClearButton.addEventListener('click', () => {
     calculator.updateConsole()
 })
 
-operationButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        calculator.pickOperation(button.innerText)
-        calculator.updateConsole()
-    })
+deleteButton.addEventListener('click', () => {
+    calculator.delete()
+    calculator.updateConsole()
 })
 
+calculator.compute()
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//js for THEME changing bellow:
 
 const $tabs = document.querySelectorAll('.js-tab')
 

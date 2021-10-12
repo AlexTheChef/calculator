@@ -222,7 +222,7 @@ body {
     background-color: var(--output-color);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     flex-direction: row;
     padding: 10px 32px 10px 10px;
     word-wrap: break-word;
@@ -232,15 +232,6 @@ body {
     margin-bottom: 24px;
 }
 
-.output .previous-operand {
-    color: var(--text-color);
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 45px;
-    letter-spacing: -0.8px;
-    opacity: 0.75;
-}
-
 .output .current-operand {
     color: var(--text-color);
     font-weight: bold;
@@ -248,6 +239,7 @@ body {
     line-height: 54px;
     text-align: right;
     letter-spacing: -0.8px;
+    margin-top: 12px;
 }
 
 #del {
@@ -331,12 +323,5 @@ body {
         line-height: 36px;
         letter-spacing: -0.53px;
         text-align: center;
-    }
-    .output .previous-operand {
-        font-size: 14px;
-        line-height: 20px;
-        letter-spacing: 0;
-        opacity: 0.75;
-        margin-top:10px;
     }
 }
